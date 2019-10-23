@@ -1,0 +1,105 @@
+object Form64: TForm64
+  Left = 0
+  Top = 0
+  Caption = 'Form64'
+  ClientHeight = 198
+  ClientWidth = 525
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object RectangleTest: TRectangle
+    Fill.Color = claWhite
+    Position.X = 17.000000000000000000
+    Position.Y = 61.000000000000000000
+    Size.Width = 256.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    object TextTest: TText
+      Align = Client
+      Locked = True
+      Size.Width = 256.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'ligne test '
+    end
+  end
+  object CouleurFond: TComboColorBox
+    Color = claWhite
+    Position.X = 360.000000000000000000
+    Position.Y = 62.000000000000000000
+    Size.Width = 60.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnChange = CouleurFondChange
+  end
+  object CouleurTexte: TComboColorBox
+    Color = claBlack
+    Position.X = 120.000000000000000000
+    Position.Y = 22.000000000000000000
+    Size.Width = 60.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnChange = CouleurFondChange
+  end
+  object Delta: TTrackBar
+    CanParentFocus = True
+    Max = 50.000000000000000000
+    Orientation = Horizontal
+    Position.X = 112.000000000000000000
+    Position.Y = 120.000000000000000000
+    TabOrder = 6
+    Value = 30.000000000000000000
+    OnTracking = DeltaTracking
+  end
+  object Label1: TLabel
+    Position.X = 32.000000000000000000
+    Position.Y = 24.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Couleur Texte'
+    TabOrder = 8
+  end
+  object Label2: TLabel
+    Position.X = 280.000000000000000000
+    Position.Y = 64.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    Text = 'Couleur Fond'
+    TabOrder = 7
+  end
+  object Label3: TLabel
+    Position.X = 112.000000000000000000
+    Position.Y = 104.000000000000000000
+    Size.Width = 105.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.HorzAlign = Center
+    Text = 'Delta'
+    TabOrder = 9
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 444
+    Top = 21
+    object LinkControlToPropertyFillColor: TLinkControlToProperty
+      Category = 'Liaisons rapides'
+      Control = CouleurFond
+      Track = True
+      Component = RectangleTest
+      ComponentProperty = 'Fill.Color'
+    end
+    object LinkControlToPropertyColor: TLinkControlToProperty
+      Category = 'Liaisons rapides'
+      Control = CouleurTexte
+      Track = True
+      Component = TextTest
+      ComponentProperty = 'Color'
+    end
+  end
+end
